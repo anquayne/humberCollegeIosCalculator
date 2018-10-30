@@ -53,6 +53,18 @@ class ViewController: UIViewController {
     
     @IBAction func decimal(_ sender: UIButton) {
      //   if(queryLabel)
+        if(operatorActive){
+            if(!expression2.contains(".")){
+                expression2.append(".")
+            }
+            updateQuery(query: expression1 + operation + expression2)
+        }
+        else{
+            if(!expression1.contains(".")){
+                expression1.append(".")
+            }
+            updateQuery(query: expression1)
+        }
     }
     
     
